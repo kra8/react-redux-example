@@ -1,4 +1,4 @@
-# React-Redux Tutorial
+# React-Redux Example
 
 ## Start Demos
 ``` sh
@@ -8,6 +8,24 @@ $ npm start
 ```
 
 Then, open the http://localhost:8888
+
+## チュートリアルとの差異
+* index.htmlとdistディレクトリをpublicディレクトリ配下に移動しています。
+* importに相対パスを用いるのをやめて、エイリアスを用いています。
+* tasksとなっていた部分を全てsampleDataに変更しています。
+
+## React-Reduxで作るときの流れ
+Redux部分
+1. ActionTypesを宣言する
+2. ActionCreaterを作成する
+3. Reducerを作成する
+4. combineReducersに登録する
+
+React部分
+1. Componentを作成する
+
+React-Redux部分
+1. Containersを作成する
 
 ## 使用しているES6の基本構文(一部)
 
@@ -128,3 +146,49 @@ const obj2 = {foo: "bar"}
 
 console.log(Object.is(obj1, obj2)) // false
 ```
+
+---
+
+# 参考
+## React
+* [React公式](https://reactjs.org)
+  * [公式チュートリアル](https://reactjs.org/tutorial/tutorial.html)
+  * [JSX記法のドキュメント](https://reactjs.org/docs/jsx-in-depth.html)
+  * [Reactを用いた設計の考え方](https://reactjs.org/docs/thinking-in-react.html)
+  * [Reactに関する語集](https://reactjs.org/docs/glossary.html)
+
+* [reactjs_koans(チュートリアル)](https://github.com/arkency/reactjs_koans)
+
+## ES6
+### ES6とは?
+* [ES6入門](https://qiita.com/soarflat/items/b251caf9cb59b72beb9b)
+* [ES6入門まとめ](https://qiita.com/To_BB/items/0574892896212f34960e)
+* [ES2015で始めるJavaScript入門](https://qiita.com/abcang/items/824681cb88676da4f9a8)
+
+### StyleGuide
+* [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
+### ES6に関する構文
+* [Default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/default_parameters)
+* [Spread syntax(stage-3)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+* [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+## Redux
+* [Redux公式](https://redux.js.org)
+  * [Redux とは](https://redux.js.org)
+  * [Actionとは](https://redux.js.org/docs/basics/Actions.html)
+  * [Reducerとは](https://redux.js.org/docs/basics/Reducers.html)
+  * [Storeとは](https://redux.js.org/docs/basics/Store.html)
+  * [Reducersのひな形](https://redux.js.org/docs/recipes/ReducingBoilerplate.html)
+
+### Redux with React
+* [プレゼンテーションコンポーネントとコンテナコンポーネントについて](https://qiita.com/tuttieee/items/a3ca7d9d415049d02d60)
+* [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+* [Reactと使う](https://redux.js.org/docs/basics/UsageWithReact.html)
+
+## Github
+* [Redux](https://github.com/reactjs/redux)
+
+## その他参考にした資料
+* [React.js 実戦投入への道](https://qiita.com/icoxfog417/items/5d79b3336226aa51e30d)
+* [Periodic table of HTML elements](https://madebymike.com.au/demos/html5-periodic-table/)
