@@ -9,7 +9,6 @@ export default class SampleData extends Component {
   }
 
   onClickHandler () {
-    console.log(this)
     this.props.getSampleDataIfNeeded()
   }
 
