@@ -13,6 +13,7 @@ Then, open the http://localhost:8888
 * index.htmlとdistディレクトリをpublicディレクトリ配下に移動しています。
 * importに相対パスを用いるのをやめて、エイリアスを用いています。
 * tasksとなっていた部分を全てsampleDataに変更しています。
+* actionsディレクトリ以下のディレクトリ名を変更しています。
 
 ## React-Reduxで作るときの流れ
 Redux部分
