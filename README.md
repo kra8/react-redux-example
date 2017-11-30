@@ -155,7 +155,9 @@ console.log(Object.is(obj1, obj2)) // false
 > createStore(reducer, [preloadedState], [enhancer])
 
 第三引数または第二引数に、enhancerという関数が渡ってくることを想定している。
-そして、このenhancerとは[Store enhancer](https://github.com/reactjs/redux/blob/master/docs/Glossary.md#store-enhancer)のことである。`Store enhancer`は、[Store creater](https://github.com/reactjs/redux/blob/master/docs/Glossary.md#store-creator)を新しく拡張して構成した`Store creater`を返す **[高階関数](https://ja.wikipedia.org/wiki/%E9%AB%98%E9%9A%8E%E9%96%A2%E6%95%B0)** のこと。
+そして、このenhancerとは[Store enhancer](https://github.com/reactjs/redux/blob/master/docs/Glossary.md#store-enhancer)のことである。`Store enhancer`は、[Store creator](https://github.com/reactjs/redux/blob/master/docs/Glossary.md#store-creator)を新しく拡張して構成した`Store creator`を返す **[高階関数](https://ja.wikipedia.org/wiki/%E9%AB%98%E9%9A%8E%E9%96%A2%E6%95%B0)** のこと。
+
+> Store CreatorはStore enhancerなどで用いられるReduxのStoreを作成するための関数ですが、基本のcreateStore関数とは別のものです。
 
 > 高階関数とは、単に関数を引数にとったり戻り値にしているような関数のこと。
 
