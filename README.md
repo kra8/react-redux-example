@@ -148,6 +148,57 @@ const obj2 = {foo: "bar"}
 console.log(Object.is(obj1, obj2)) // false
 ```
 
+## Redux
+
+### enhancer とは...
+まず、createStore関数は
+> createStore(reducer, [preloadedState], [enhancer])
+
+第三引数または第二引数に、enhancerという関数が渡ってくることを想定している。
+そして、このenhancerとは[Store enhancer](https://github.com/reactjs/redux/blob/master/docs/Glossary.md#store-enhancer)のことである。`Store enhancer`は、[Store creater](https://github.com/reactjs/redux/blob/master/docs/Glossary.md#store-creator)を新しく拡張して構成した`Store creater`を返す **[高階関数](https://ja.wikipedia.org/wiki/%E9%AB%98%E9%9A%8E%E9%96%A2%E6%95%B0)** のこと。
+
+> 高階関数とは、単に関数を引数にとったり戻り値にしているような関数のこと。
+
+### compose
+[compose](https://github.com/reactjs/redux/blob/master/docs/api/compose.md)関数は、関数を複数引数にとり、それらの関数の戻り値を右から左へと順々に渡した新しい関数を返します。
+``` js
+const a = arg => {
+    //...
+    return aSomething
+}
+const b = arg => {
+    //...
+    return bSomething
+}
+
+const composed = compose(a, b)
+
+// const composed = arg => {
+//     return a(b(arg))
+// }
+
+```
+Reduxでは、複数のStore enhancerを用いたい場合にcomposeを用います。
+
+そして、`applyMiddleware`もStore enhancerです。applyMiddlewareだけを用いる場合はcomposeを使う必要はないですが、例えばもう一つの有名なStore enhancerの`redux-devtools`も合わせて使いたい場合は以下のようにcomposeを使う必要があります。
+
+``` js
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
+import DevTools from './containers/DevTools'
+import reducer from '../reducers'
+
+const enhancer = compose(
+  applyMiddleware(thunk),
+  DevTools.instrument()
+)
+
+const store = createStore(
+  reducer,
+  enhancer
+)
+```
+
 ---
 
 # 参考
@@ -193,3 +244,4 @@ console.log(Object.is(obj1, obj2)) // false
 ## その他参考にした資料
 * [React.js 実戦投入への道](https://qiita.com/icoxfog417/items/5d79b3336226aa51e30d)
 * [Periodic table of HTML elements](https://madebymike.com.au/demos/html5-periodic-table/)
+* [reduxのcomposeとapplyMiddlewareとenhancer](https://qiita.com/pirosikick/items/d7f9e5e197a2e8aad62f)
