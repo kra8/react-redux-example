@@ -148,7 +148,7 @@ const obj2 = {foo: "bar"}
 console.log(Object.is(obj1, obj2)) // false
 ```
 
-## Redux
+## Redux Tips
 
 ### enhancer とは...
 まず、createStore関数は
