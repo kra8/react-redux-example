@@ -96,7 +96,7 @@ var adder = function (a, b) {
 var adder = new Function("a", "b", "return a + b");
 
 // es6ではこう書く
-const adder = (a, b) = {
+const adder = (a, b) => {
     return a + b
 }
 ```
